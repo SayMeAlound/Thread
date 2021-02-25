@@ -3,6 +3,7 @@ package ThreadPool;/*
     @create 2021-02-23-23:39  
 */
 
+import java.util.ArrayList;
 import java.util.concurrent.*;
 //Executors  工具类(类似 Collections Arrays)  线程池   三大方法
 
@@ -21,7 +22,6 @@ public class Demo2 {
         System.out.println(Runtime.getRuntime().availableProcessors());  //获取CPU核数
         ExecutorService threadpool =new ThreadPoolExecutor(
                 2,5,3, TimeUnit.SECONDS,new LinkedBlockingQueue<>(3) ,Executors.defaultThreadFactory(),new ThreadPoolExecutor.CallerRunsPolicy());
-
         try {
             //最大承载  最大线程数  + 等待队列
             for (int i = 1; i <= 8; i++) {
